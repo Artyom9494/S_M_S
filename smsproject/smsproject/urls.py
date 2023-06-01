@@ -18,7 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from mainsms.views import index
+
 urlpatterns = [
+    path('', index),
     path('mainsms/', include('mainsms.urls')),
     path('admin/', admin.site.urls),
 ]
