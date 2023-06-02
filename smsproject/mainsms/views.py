@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 
 
 def main(request):
@@ -11,3 +11,8 @@ def index(request):
 
 def product(request, product_id):
     return HttpResponse(f'<h1>PRODUCT</h1> <p>{product_id}</p>')
+
+
+# обработка неверных урл адресов
+def page_not_found(request, exception):
+    return HttpResponseNotFound('<h1>page_not_found 404</h1>')

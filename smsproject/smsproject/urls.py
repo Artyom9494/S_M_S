@@ -18,10 +18,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from mainsms.views import index
-
+from mainsms.views import page_not_found
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainsms.urls')),
 ]
+
+# обработка неверных урл адресов
+handler404 = page_not_found
